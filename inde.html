@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>chatbot</title>
+</head>
+<body>
+
+    <div class="container d-flex justify-content-end pt-4" >
+        <div id="popover" style="display: none;" >
+    
+        <div  id='pop' >
+            <div class='d-flex justify-content-center'>
+                <img src='img/chatbot (1) 1.svg'>
+    
+            </div>
+            <div class='d-flex justify-content-center pt-3'>
+                <img src='img/Y’ello !.svg'>
+               
+            </div>
+    
+            <p class='d-flex justify-content-center p-4' style="font-size: 12px;">
+                Bienvenu au service client de MTN E-BOUTIQUE. Nous sommes disponibles pour vous aider.
+            </p>
+    <p class='d-flex justify-content-center p-4'>
+<button id="start" onclick="myfunction()"><span style="font-size: 12px; font-weight: 600;">DÉMARRER</span> <span class="pl-3"><img src="img/arrow-left.svg" ></span></button>
+    </p>
+        </div>
+        <div id="step1" style="display: none;">
+            <div id="head">
+                <p class="container fw-bold">Inscription</p>
+            </div>
+            <div id="cont">
+                <div class="d-flex justify-content-center pt-5">
+<img src="img/chatbot Online.svg" alt="">
+                </div>
+                <div class="d-flex justify-content-center pt-4">
+                    <img src="img/Y’ello présente toi !.svg" alt="">
+                 </div>
+                 <div class="container pt-4">
+                    <form>
+                    <div class="container mb-3">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Entrer nom et prénoms">
+                      </div>
+                      <div class="container mb-3">
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Entrer votre mail">
+                      </div>
+                      <div class="container mb-3">
+                        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Entrer numéro de téléphone">
+                      </div>
+
+                      <div class="container d-flex justify-content-center pt-4">
+                        <button onclick="start()" class="btn btn-dark ">CHATTER</button>
+                      </div>
+                    </form>
+                 </div>
+            </div>
+        </div>
+
+        <div id="stepeChat" style="display: none;">
+            <div id="head">
+                <p class="container fw-bold">Inscription</p>
+                <button onclick="myfunction()" class="btn btn-dark ">CHATTER</button>
+
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    
+    <div class="container">
+        <div class="container d-flex justify-content-end" id="web">
+            <button class="chatbot" onclick="chat()"><span id="robot"><img src="img/chatbot (1) 1.svg" alt=""></span></button>
+
+        </div>
+    </div>
+
+    <script>
+        function chat(){
+            let d2= document.getElementById("popover");
+            let icon = document.getElementById("robot");
+            if(getComputedStyle(d2).display != "none"){
+                d2.style.display = "none";
+                icon.innerHTML = "<img src='img/chatbot (1) 1.svg'>"
+
+              } else {
+                d2.style.display = "block";
+                icon.innerHTML = "<img src='img/delete.svg'>"
+
+              }
+            };
+           
+    function myfunction(){
+        let start= document.getElementById('pop');
+        let pop= document.getElementById('popover');
+        let step1= document.getElementById('step1');
+
+        start.style.display="none";
+        pop.style.backgroundColor="#fff";
+        step1.style.display="block";
+    }
+
+
+
+
+    function start(){
+        let pop= document.getElementById('popover');
+
+        pop.style.backgroundColor="#ffcb05";
+    }
+    </script>
+</body>
+</html>
